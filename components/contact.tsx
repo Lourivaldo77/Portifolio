@@ -6,7 +6,6 @@ import { Send, Github, Linkedin, Mail, CheckCircle, AlertCircle } from "lucide-r
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" })
-  const [loading, setLoading] = useState(false)
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle")
   const [message, setMessage] = useState("")
 
@@ -17,33 +16,17 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setLoading(true)
-    setStatus("idle")
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      })
-
-      const data = await response.json()
-
-      if (response.ok) {
-        setStatus("success")
-        setMessage("Mensagem enviada com sucesso! 🎉")
-        setFormData({ name: "", email: "", subject: "", message: "" })
-        setTimeout(() => setStatus("idle"), 5000)
-      } else {
-        setStatus("error")
-        setMessage(data.error || "Erro ao enviar mensagem")
-      }
-    } catch (error) {
-      setStatus("error")
-      setMessage("Erro ao conectar com o servidor")
-    } finally {
-      setLoading(false)
-    }
+    
+    // For GitHub Pages, use mailto link since there's no server-side code
+    const subject = encodeURIComponent(formData.subject)
+    const body = encodeURIComponent(`Nome: ${formData.name}\nEmail: ${formData.email}\n\nMensagem:\n${formData.message}`)
+    const mailtoLink = `mailto:lourivaldogaspar4@gmail.com?subject=${subject}&body=${body}`
+    
+    window.location.href = mailtoLink
+    setStatus("success")
+    setMessage("O seu cliente de email deve abrir para enviar a mensagem!")
+    setFormData({ name: "", email: "", subject: "", message: "" })
+    setTimeout(() => setStatus("idle"), 5000)
   }
 
   return (
@@ -192,10 +175,9 @@ export default function Contact() {
 
               <button
                 type="submit"
-                disabled={loading}
-                className="w-full bg-primary text-primary-foreground font-medium py-3 rounded-md hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 mt-4 shadow-lg shadow-primary/20 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-primary text-primary-foreground font-medium py-3 rounded-md hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 mt-4 shadow-lg shadow-primary/20"
               >
-                {loading ? "Enviando..." : "Enviar Mensagem"}
+                Enviar Mensagem
                 <Send className="w-4 h-4" />
               </button>
             </form>
