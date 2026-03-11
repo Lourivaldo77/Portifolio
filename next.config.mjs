@@ -7,10 +7,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Garantir que variáveis de ambiente sejam tratadas corretamente
-  env: {
-    NEXT_PUBLIC_BASE_PATH: '/Portifolio',
-  },
 };
 
 export default nextConfig;

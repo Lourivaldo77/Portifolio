@@ -108,7 +108,8 @@ export default function Hero() {
               <span className="sr-only">GitHub</span>
             </motion.a>
             <motion.a
-              href="https://linkedin.com"
+              // TODO: Substitua pelo seu URL do LinkedIn
+              href="https://linkedin.com/in/seu-perfil"
               target="_blank"
               rel="noreferrer"
               className="hover:text-primary transition-colors"
