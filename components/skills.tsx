@@ -1,0 +1,105 @@
+"use client"
+
+import { motion } from "framer-motion"
+import { FileCode2, Palette, Database, Layout, GitBranch, Globe, Terminal, Layers } from "lucide-react"
+
+export default function Skills() {
+  const skills = [
+    { name: "HTML5", icon: <Globe className="w-8 h-8 text-orange-500" /> },
+    { name: "CSS3", icon: <Palette className="w-8 h-8 text-blue-500" /> },
+    { name: "JavaScript (ES6+)", icon: <FileCode2 className="w-8 h-8 text-yellow-400" /> },
+    { name: "React", icon: <div className="text-cyan-400 font-bold text-2xl">⚛️</div> },
+    { name: "Next.js", icon: <div className="text-white font-bold text-xl">N</div> },
+    { name: "Tailwind CSS", icon: <div className="text-cyan-400 font-bold text-xl">TW</div> },
+    { name: "TypeScript", icon: <FileCode2 className="w-8 h-8 text-blue-600" /> },
+    { name: "Node.js", icon: <Database className="w-8 h-8 text-green-500" /> },
+    { name: "Express.js", icon: <FileCode2 className="w-8 h-8 text-gray-300" /> },
+    { name: "MongoDB", icon: <Database className="w-8 h-8 text-green-600" /> },
+    { name: "PostgreSQL", icon: <Database className="w-8 h-8 text-blue-700" /> },
+    { name: "Git & Github", icon: <GitBranch className="w-8 h-8 text-red-500" /> },
+    { name: "REST APIs", icon: <FileCode2 className="w-8 h-8 text-indigo-400" /> },
+    { name: "Docker", icon: <Layers className="w-8 h-8 text-blue-500" /> },
+    { name: "Terminal/CLI", icon: <Terminal className="w-8 h-8 text-gray-400" /> },
+    { name: "VS Code", icon: <Layers className="w-8 h-8 text-blue-400" /> },
+  ]
+
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.05,
+      },
+    },
+  }
+
+  const item = {
+    hidden: { opacity: 0, y: 20, scale: 0.8 },
+    show: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 10,
+      },
+    },
+  }
+
+  return (
+    <section id="skills" className="py-24 bg-card/30 relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[100px] -z-10 animate-pulse" />
+
+      <div className="container mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-4xl mx-auto"
+        >
+          <div className="flex items-center gap-2 mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold">Tecnologias & Ferramentas</h2>
+            <motion.span
+              className="h-px bg-white/20 flex-grow max-w-xs ml-4"
+              animate={{ scaleX: [0, 1] }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            />
+          </div>
+
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6"
+          >
+            {skills.map((skill, index) => (
+              <motion.div
+                key={index}
+                variants={item}
+                whileHover={{
+                  y: -8,
+                  scale: 1.05,
+                  backgroundColor: "rgba(59, 130, 246, 0.08)",
+                  boxShadow: "0 0 30px rgba(59, 130, 246, 0.2)",
+                }}
+                className="bg-card border border-white/5 p-6 rounded-xl flex flex-col items-center justify-center gap-4 transition-all cursor-pointer group shadow-lg"
+              >
+                <motion.div
+                  className="p-3 bg-background rounded-full group-hover:scale-110 transition-transform duration-300 border border-white/5"
+                  whileHover={{ rotate: 10 }}
+                >
+                  {skill.icon}
+                </motion.div>
+                <span className="text-sm font-medium text-muted-foreground group-hover:text-primary transition-colors">
+                  {skill.name}
+                </span>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
