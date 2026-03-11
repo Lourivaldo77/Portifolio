@@ -1,4 +1,4 @@
-"use client"
+ "use client"
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
@@ -52,12 +52,6 @@ export default function Navbar() {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </Link>
           ))}
-          <Link
-            href="/resume.pdf"
-            className="border border-primary text-primary px-4 py-2 rounded-md hover:bg-primary/10 transition-colors text-sm font-medium"
-          >
-            Currículo
-          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -89,13 +83,6 @@ export default function Navbar() {
                   {link.name}
                 </Link>
               ))}
-              <Link
-                href="/resume.pdf"
-                className="mt-4 border border-primary text-primary px-4 py-3 rounded-md hover:bg-primary/10 transition-colors text-center font-medium"
-                onClick={() => setIsOpen(false)}
-              >
-                Baixar Currículo
-              </Link>
             </div>
           </motion.div>
         )}
