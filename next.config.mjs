@@ -1,14 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  trailingSlash: true,
-  basePath: '/Portifolio',
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  images: {
-    unoptimized: true,
-  },
-}
+  basePath: '/Portifolio', // Se estiver em subpasta
+  // basePath: '', // Se for o site principal
+};
 
-export default nextConfig
+export default nextConfig;
