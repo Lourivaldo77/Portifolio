@@ -1,12 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  basePath: '/Portifolio',
-  trailingSlash: true,
-  // Configurações para evitar erros com static export
-  images: {
-    unoptimized: true,
-  },
+  // Nenhuma configuração extra é necessária para o deploy na Vercel.
+  // A plataforma detecta e otimiza o projeto Next.js automaticamente.
 };
 
 export default nextConfig;

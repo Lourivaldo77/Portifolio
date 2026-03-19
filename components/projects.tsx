@@ -178,7 +178,7 @@ export default function Projects() {
                   <p className="text-muted-foreground text-sm mb-6 flex-grow">{project.description}</p>
 
                   <ul className="flex flex-wrap gap-x-4 gap-y-2 text-xs font-mono text-secondary">
-                    {project.tech.map((t, i) => (
+                    {project.tech.map((t: string, i: number) => (
                       <li key={i}>{t}</li>
                     ))}
                   </ul>

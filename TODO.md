@@ -1,7 +1,13 @@
-# Portifolio Deployment Checklist
+# Next.js TypeScript Error Fixes - TODO
 
-## 📋 ANÁLISE COMPLETA DO PROJETO
+✅ Step 1: Edit components/projects.tsx - Add types to project.tech.map((t: string, i: number)) - **DONE**
 
-### ✅ ITENS CORRETOS:
-- [x] next.config.mjs com `output: 'export'` e `basePath: '/Portifolio'`
-- [x] Página app/page.tsx existe e está configurada corretamente
+✅ Step 2: Edit components/skills.tsx - Add `as const` to type: "spring" in item variant transition - **DONE**
+
+✅ Step 3: Verify .gitignore ignores .next - **DONE** (already present)
+
+✅ Step 4: Delete .next folder and restart dev server - **USER ACTION NEEDED**
+
+✅ Step 5: Confirm all TypeScript errors resolved - **CHECK VSCode / npm run build**
+
+
