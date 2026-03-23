@@ -66,7 +66,7 @@ export default function Skills() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6"
+            className="flex flex-wrap justify-center gap-6"
           >
             {skills.map((skill, index) => (
               <motion.div
@@ -78,7 +78,7 @@ export default function Skills() {
                   backgroundColor: "rgba(59, 130, 246, 0.08)",
                   boxShadow: "0 0 30px rgba(59, 130, 246, 0.2)",
                 }}
-                className="bg-card border border-white/5 p-6 rounded-xl flex flex-col items-center justify-center gap-4 transition-all cursor-pointer group shadow-lg"
+                className="bg-card border border-white/5 p-6 rounded-xl flex flex-col items-center justify-center gap-4 transition-all cursor-pointer group shadow-lg w-32 h-32 sm:w-40 sm:h-40"
               >
                 <motion.div
                   className="p-3 bg-background rounded-full group-hover:scale-110 transition-transform duration-300 border border-white/5"
