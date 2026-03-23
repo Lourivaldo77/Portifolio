@@ -79,8 +79,16 @@ export default function Projects() {
             description: repo.description || "Projeto desenvolvido com tecnologias modernas.",
             tech: [repo.language, ...(repo.topics || [])].filter((item): item is string => !!item),
             image: imageUrl,
-            github: repo.name === "Reservas_de_hoteis" ? "https://github.com/Lourivaldo77/Reservas_de_hoteis" : repo.html_url,
-            demo: repo.name === "Reservas_de_hoteis" ? "https://reservas-de-hoteis.vercel.app/" : (repo.homepage || repo.html_url),
+            github: repo.name === "Reservas_de_hoteis" 
+              ? "https://github.com/Lourivaldo77/Reservas_de_hoteis" 
+              : repo.name === "Nike-website-Replica-"
+              ? "https://github.com/Lourivaldo77/Nike-website-Replica-"
+              : repo.html_url,
+            demo: repo.name === "Reservas_de_hoteis" 
+              ? "https://reservas-de-hoteis.vercel.app/" 
+              : repo.name === "Nike-website-Replica-"
+              ? "https://nike-website-replica.vercel.app/"
+              : (repo.homepage || repo.html_url),
           }
         })
 
