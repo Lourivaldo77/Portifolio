@@ -182,6 +182,8 @@ export default function Projects() {
                       <motion.div whileHover={{ scale: 1.2, y: -3 }} whileTap={{ scale: 0.9 }}>
                         <Link
                           href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="text-muted-foreground hover:text-primary transition-colors"
                         >
                           <Github className="w-5 h-5" />
@@ -190,6 +192,8 @@ export default function Projects() {
                       <motion.div whileHover={{ scale: 1.2, y: -3 }} whileTap={{ scale: 0.9 }}>
                         <Link
                           href={project.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="text-muted-foreground hover:text-primary transition-colors"
                         >
                           <ExternalLink className="w-5 h-5" />
@@ -221,6 +225,8 @@ export default function Projects() {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 href="https://github.com/Lourivaldo77"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 border border-primary text-primary px-8 py-4 rounded-md hover:bg-primary/10 transition-colors font-mono"
               >
                 Ver Mais no GitHub
