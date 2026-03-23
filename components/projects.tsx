@@ -83,11 +83,15 @@ export default function Projects() {
               ? "https://github.com/Lourivaldo77/Reservas_de_hoteis" 
               : repo.name === "Nike-website-Replica-"
               ? "https://github.com/Lourivaldo77/Nike-website-Replica-"
+              : repo.name === "Site_Turismo_Tokio"
+              ? "https://github.com/Lourivaldo77/Site_Turismo_Tokio"
               : repo.html_url,
             demo: repo.name === "Reservas_de_hoteis" 
               ? "https://reservas-de-hoteis.vercel.app/" 
               : repo.name === "Nike-website-Replica-"
               ? "https://nike-website-replica.vercel.app/"
+              : repo.name === "Site_Turismo_Tokio"
+              ? "https://lourivaldo77.github.io/Site_Turismo_Tokio/"
               : (repo.homepage || repo.html_url),
           }
         })
