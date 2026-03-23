@@ -11,6 +11,8 @@ export default function Skills() {
     { name: "React", icon: <div className="text-cyan-400 font-bold text-2xl">⚛️</div> },
     { name: "Node.js", icon: <Database className="w-8 h-8 text-green-500" /> },
     { name: "PHP", icon: <FileCode2 className="w-8 h-8 text-indigo-500" /> },
+    { name: "Next.js", icon: <div className="text-white font-bold text-xl">N</div> },
+    { name: "WordPress", icon: <Layout className="w-8 h-8 text-blue-400" /> },
   ]
 
   const container = {
