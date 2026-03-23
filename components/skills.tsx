@@ -14,6 +14,7 @@ export default function Skills() {
     { name: "Next.js", icon: <div className="text-white font-bold text-xl">N</div> },
     { name: "WordPress", icon: <Layout className="w-8 h-8 text-blue-400" /> },
     { name: "MySQL", icon: <Database className="w-8 h-8 text-blue-500" /> },
+    { name: "Git & GitHub", icon: <GitBranch className="w-8 h-8 text-red-500" /> },
   ]
 
   const container = {
