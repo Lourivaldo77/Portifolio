@@ -108,8 +108,7 @@ export default function Hero() {
               <span className="sr-only">GitHub</span>
             </motion.a>
             <motion.a
-              // TODO: Substitua pelo seu URL do LinkedIn
-              href="https://linkedin.com/in/seu-perfil"
+              href="https://www.linkedin.com/in/lourivaldo-gaspar-618927297"
               target="_blank"
               rel="noreferrer"
               className="hover:text-primary transition-colors"

@@ -65,8 +65,7 @@ export default function Contact() {
                   <span>lourivaldogaspar4@gmail.com</span>
                 </a>
                 <a
-                  // TODO: Substitua pelo seu URL do LinkedIn
-                  href="https://linkedin.com/in/seu-perfil"
+                  href="https://www.linkedin.com/in/lourivaldo-gaspar-618927297"
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors p-3 hover:bg-white/5 rounded-lg"

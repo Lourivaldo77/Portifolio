@@ -63,14 +63,26 @@ export default function Projects() {
           data = await response.json()
         }
 
-        const formattedProjects = data.map((repo) => ({
-          title: repo.name.replace(/-/g, " ").replace(/_/g, " "),
-          description: repo.description || "Projeto desenvolvido com tecnologias modernas.",
-          tech: [repo.language, ...(repo.topics || [])].filter((item): item is string => !!item),
-          image: `https://raw.githubusercontent.com/Lourivaldo77/${repo.name}/${repo.default_branch}/cover.png`,
-          github: repo.html_url,
-          demo: repo.homepage || repo.html_url,
-        }))
+        const formattedProjects = data.map((repo) => {
+          let imageUrl = `https://raw.githubusercontent.com/Lourivaldo77/${repo.name}/${repo.default_branch}/cover.png`
+          
+          if (repo.name === "Site_Turismo_Tokio") {
+            imageUrl = "/tokyo-tourism.png"
+          } else if (repo.name === "Nike-website-Replica-") {
+            imageUrl = "/nike-replica.png"
+          } else if (repo.name === "Reservas_de_hoteis") {
+            imageUrl = "/hotel-reservations-v2.png"
+          }
+
+          return {
+            title: repo.name.replace(/-/g, " ").replace(/_/g, " "),
+            description: repo.description || "Projeto desenvolvido com tecnologias modernas.",
+            tech: [repo.language, ...(repo.topics || [])].filter((item): item is string => !!item),
+            image: imageUrl,
+            github: repo.name === "Reservas_de_hoteis" ? "https://github.com/Lourivaldo77/Reservas_de_hoteis" : repo.html_url,
+            demo: repo.name === "Reservas_de_hoteis" ? "https://reservas-de-hoteis.vercel.app/" : (repo.homepage || repo.html_url),
+          }
+        })
 
         setProjects(formattedProjects)
       } catch (error) {
