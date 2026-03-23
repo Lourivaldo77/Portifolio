@@ -38,7 +38,7 @@ export default function Projects() {
   // ⬇️ ADICIONE AQUI os links ou nomes dos repositórios que você quer exibir
   // Exemplo: ["https://github.com/Lourivaldo77/meu-projeto", "outro-projeto"]
   // Se deixar vazio [], ele mostrará os 6 últimos atualizados automaticamente.
-  const selectedRepos: string[] = []
+  const selectedRepos: string[] = ["Site_Turismo_Tokio", "Nike-website-Replica-", "Reservas_de_hoteis"]
 
   useEffect(() => {
     const fetchProjects = async () => {
