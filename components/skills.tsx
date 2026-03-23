@@ -6,21 +6,11 @@ import { FileCode2, Palette, Database, Layout, GitBranch, Globe, Terminal, Layer
 export default function Skills() {
   const skills = [
     { name: "HTML5", icon: <Globe className="w-8 h-8 text-orange-500" /> },
-    { name: "CSS3", icon: <Palette className="w-8 h-8 text-blue-500" /> },
-    { name: "JavaScript (ES6+)", icon: <FileCode2 className="w-8 h-8 text-yellow-400" /> },
-    { name: "React", icon: <div className="text-cyan-400 font-bold text-2xl">⚛️</div> },
-    { name: "Next.js", icon: <div className="text-white font-bold text-xl">N</div> },
+    { name: "CSS", icon: <Palette className="w-8 h-8 text-blue-500" /> },
     { name: "Tailwind CSS", icon: <div className="text-cyan-400 font-bold text-xl">TW</div> },
-    { name: "TypeScript", icon: <FileCode2 className="w-8 h-8 text-blue-600" /> },
+    { name: "React", icon: <div className="text-cyan-400 font-bold text-2xl">⚛️</div> },
     { name: "Node.js", icon: <Database className="w-8 h-8 text-green-500" /> },
-    { name: "Express.js", icon: <FileCode2 className="w-8 h-8 text-gray-300" /> },
-    { name: "MongoDB", icon: <Database className="w-8 h-8 text-green-600" /> },
-    { name: "PostgreSQL", icon: <Database className="w-8 h-8 text-blue-700" /> },
-    { name: "Git & Github", icon: <GitBranch className="w-8 h-8 text-red-500" /> },
-    { name: "REST APIs", icon: <FileCode2 className="w-8 h-8 text-indigo-400" /> },
-    { name: "Docker", icon: <Layers className="w-8 h-8 text-blue-500" /> },
-    { name: "Terminal/CLI", icon: <Terminal className="w-8 h-8 text-gray-400" /> },
-    { name: "VS Code", icon: <Layers className="w-8 h-8 text-blue-400" /> },
+    { name: "PHP", icon: <FileCode2 className="w-8 h-8 text-indigo-500" /> },
   ]
 
   const container = {
